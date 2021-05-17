@@ -1,4 +1,4 @@
-# idea files
+# Idea files
 .idea
 *.iml
-target/c
+target/
