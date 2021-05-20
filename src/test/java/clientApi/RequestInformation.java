@@ -9,7 +9,6 @@ import java.util.Map;
  * @autor: Boris.Perez
  **/
 public class RequestInformation {
-
     private String url;
     private Map<String, String> params = new HashMap<>();
     private MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
@@ -61,4 +60,3 @@ public class RequestInformation {
         this.body = body;
     }
 }
-
