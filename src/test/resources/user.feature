@@ -6,7 +6,7 @@ Feature: Users
     When I send POST request 'api/user.json' with json and BASIC authentication
   """
    {
-       "Email":"B111@gmail.com",
+       "Email":"B000@gmail.com",
        "FullName": "Boris Perez",
        "Password": 123456
   }
@@ -16,7 +16,7 @@ Feature: Users
     """
      {
     "Id": EXCLUDE,
-    "Email": "B111@gmail.com",
+    "Email": "B000@gmail.com",
     "Password": null,
     "FullName": "Boris Perez",
     "TimeZone": 0,
@@ -29,8 +29,9 @@ Feature: Users
     "NewTaskDueDate": -1,
     "TimeZoneId": "Pacific Standard Time"
      }
-    """
-#    And I get the property value 'value' and save on value
+     """
+    And I get the property value 'Id' and save on ID_USER
+
 #
 #    When I send PUT request 'path' with json and BASIC authentication
 #    """

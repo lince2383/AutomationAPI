@@ -60,4 +60,11 @@ public class MyStepdefs {
         System.out.println("Response Body "+this.replaceVariables(response.getResponseBody()));
         Assert.assertTrue("ERROR el response body es incorrecto", JsonHelper.areEqualJSON(this.replaceVariables(expectResponseBody), response.getResponseBody()));
     }
+
+    @And("^I get the property value '(.*)' and save on (.*)$")
+    public void iGetThePropertyValueValueAndSaveOnValue(String property, String nameVariable) throws JSONException {
+        String value = JsonHelper.getValueFromJSON(response.getResponseBody(),property);
+        variables.put(nameVariable, value);
+        System.out.println("variable : "+nameVariable+" value :"+variables.get(nameVariable) );
+    }
 }
