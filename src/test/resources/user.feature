@@ -6,8 +6,8 @@ Feature: Users
     When I send POST request 'api/user.json' with json and BASIC authentication
   """
    {
-       "Email":"B01234567@gmail.com",
-       "FullName": "Boris Perez",
+       "Email":"nuevo123@gmail.com",
+       "FullName": "Nuevo123",
        "Password": 123456
   }
   """
@@ -16,9 +16,9 @@ Feature: Users
     """
      {
     "Id": EXCLUDE,
-    "Email": "B01234567@gmail.com",
+    "Email": "nuevo123@gmail.com",
     "Password": null,
-    "FullName": "Boris Perez",
+    "FullName": "Nuevo123",
     "TimeZone": 0,
     "IsProUser": false,
     "DefaultProjectId": EXCLUDE,
@@ -37,7 +37,7 @@ Feature: Users
     When I send PUT request 'api/user/ID_USER.json' with json and BASIC authentication
     """
     {
-      "FullName": "Boris"
+      "FullName": "Bianca"
     }
      """
     Then I expected the response code 200
