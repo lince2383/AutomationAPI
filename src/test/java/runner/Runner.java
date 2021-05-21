@@ -5,11 +5,11 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 /**
- * @autor: Boris.Perez
+ * @autor: Evelin
  **/
 @RunWith(Cucumber.class)
 @CucumberOptions(
-       features = {"src/test/resources/user.feature"}
+       features = {"src/test/resources/user.feature","src/test/resources/projects.feature"}
         //features = {"src/test/resources/projects.feature"}
 )
 public class Runner {
