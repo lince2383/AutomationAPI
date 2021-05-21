@@ -6,7 +6,7 @@ Feature: Users
     When I send POST request 'api/user.json' with json and BASIC authentication
   """
    {
-       "Email":"B000@gmail.com",
+       "Email":"B0123@gmail.com",
        "FullName": "Boris Perez",
        "Password": 123456
   }
@@ -16,7 +16,7 @@ Feature: Users
     """
      {
     "Id": EXCLUDE,
-    "Email": "B000@gmail.com",
+    "Email": "B0123@gmail.com",
     "Password": null,
     "FullName": "Boris Perez",
     "TimeZone": 0,
@@ -32,11 +32,19 @@ Feature: Users
      """
     And I get the property value 'Id' and save on ID_USER
 
-#
-#    When I send PUT request 'path' with json and BASIC authentication
-#    """
-#    {
-#
-#    }
-#    """
-#    Then I expected the response code 200
+    And I get the property value 'FullName' and save on UseName
+
+    When I send PUT request 'api/user/ID_USER.json' with json and BASIC authentication
+    """
+    {
+      "FullName": "Boris"
+    }
+    """
+
+    Then I expected the response code 200
+
+    When I send GET request 'api/user.json' with json and BASIC authentication
+     """
+
+     """
+    Then I expected the response code 200
