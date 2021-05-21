@@ -6,7 +6,7 @@ Feature: Users
     When I send POST request 'api/user.json' with json and BASIC authentication
   """
    {
-       "Email":"B0123@gmail.com",
+       "Email":"B01234567@gmail.com",
        "FullName": "Boris Perez",
        "Password": 123456
   }
@@ -16,7 +16,7 @@ Feature: Users
     """
      {
     "Id": EXCLUDE,
-    "Email": "B0123@gmail.com",
+    "Email": "B01234567@gmail.com",
     "Password": null,
     "FullName": "Boris Perez",
     "TimeZone": 0,
@@ -39,6 +39,12 @@ Feature: Users
     {
       "FullName": "Boris"
     }
+     """
+    Then I expected the response code 200
+
+    When I send DELETE request 'api/user/ID_USER.json' with json and BASIC authentication
+    """
+
     """
 
     Then I expected the response code 200
